@@ -9,6 +9,6 @@ pandoc "$1" \
 	-V mainfont="Roboto" \
 	-V monofont="Roboto Mono" \
 	--pdf-engine=xelatex \
-	--highlight-style "$SCRIPTDIR"/pygments.theme \
-	--include-in-header "$SCRIPTDIR"/inline_code.tex \
+	--highlight-style "$SCRIPTDIR"/themes/pygments.theme \
+	--include-in-header "$SCRIPTDIR"/tex-utils/inline_code.tex \
 	-o "$2"
