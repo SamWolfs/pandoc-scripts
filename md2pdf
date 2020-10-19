@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SCRIPTDIR="$(dirname "$0")"
+pandoc "$1" \
+	-f gfm \
+	-V linkcolor:blue \
+	-V geometry:a4paper \
+	-V geometry:margin=2cm \
+	-V mainfont="Roboto" \
+	-V monofont="Roboto Mono" \
+	--pdf-engine=xelatex \
+	--highlight-style "$SCRIPTDIR"/pygments.theme \
+	--include-in-header "$SCRIPTDIR"/inline_code.tex \
+	-o "$2"
